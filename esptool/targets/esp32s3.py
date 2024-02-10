@@ -343,6 +343,11 @@ class ESP32S3ROM(ESP32ROM):
         if uses_usb_otg:
             self._check_if_can_reset()
 
+        # Clear "Force Download Boot" flag, otherwise we keep resetting to boot mode
+        # https://github.com/espressif/arduino-esp32/issues/6762#issuecomment-1829942230
+        # Thankyou, ppescher !
+        self.write_reg(self.RTC_CNTL_OPTION1_REG, 0, self.RTC_CNTL_FORCE_DOWNLOAD_BOOT_MASK)
+
         print("Hard resetting via RTS pin...")
         HardReset(self._port, uses_usb_otg)()
 
