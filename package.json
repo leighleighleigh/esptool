@@ -1,0 +1,16 @@
+{
+  "name": "tool-esptoolpy",
+  "version": "4.7-patch1",
+  "description": "A Python-based, open-source, platform-independent utility to communicate with the ROM bootloader in Espressif chips",
+  "keywords": [
+    "tools",
+    "uploader",
+    "espressif"
+  ],
+  "license": "GPL-2.0-or-later",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/leighleighleigh/esptool"
+  }
+}
+
